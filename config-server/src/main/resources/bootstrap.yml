@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:7777}
+
+management:
+  security:
+    enabled: false
+    
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false    
+
+spring:
+  resources:
+    add-mappings: true
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+     config:
+       server:
+         prefix: /config
+         native:
+           searchLocations: classpath:configs/
+
+           

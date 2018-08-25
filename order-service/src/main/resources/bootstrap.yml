@@ -1,0 +1,13 @@
+server:
+  port: ${PORT:8992}
+  use-forward-headers: false
+  servlet:
+    context-path: /order-service
+    
+
+spring:
+  application:
+    name: order-service
+  cloud:
+    config:
+      uri: http://localhost:7777/config

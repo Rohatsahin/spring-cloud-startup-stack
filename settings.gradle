@@ -1,0 +1,12 @@
+rootProject.name = 'spring-cloud-startup-stack'
+
+include 'discovery-server'
+include 'config-server'
+include 'api-gateway'
+
+include 'authentication-service'
+include 'account-service'
+include 'customer-service'
+include 'order-service'
+
+include 'microservices-common'
