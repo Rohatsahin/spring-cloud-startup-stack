@@ -4,10 +4,11 @@ server:
   servlet:
     context-path: /order-service
     
-
 spring:
   application:
     name: order-service
   cloud:
+    refresh:
+      enabled: false
     config:
       uri: http://localhost:7777/config

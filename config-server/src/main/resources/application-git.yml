@@ -1,0 +1,14 @@
+                   
+spring:    
+  cloud:
+     config:
+        server:
+          git:
+            uri: git@repository_url
+            ignoreLocalSshSettings: true
+            hostKey: someHostKey
+            hostKeyAlgorithm: ssh-rsa
+            privateKey: |
+                         -----BEGIN RSA PRIVATE KEY-----
+                          your git repo rsa key
+                         -----END RSA PRIVATE KEY-----   

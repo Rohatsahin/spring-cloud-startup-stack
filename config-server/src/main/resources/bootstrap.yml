@@ -17,11 +17,6 @@ spring:
     name: config-server
   profiles:
     active: native
-  cloud:
-     config:
-       server:
-         prefix: /config
-         native:
-           searchLocations: classpath:configs/
+                     
 
            
