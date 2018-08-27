@@ -1,0 +1,5 @@
+// docker
+
+docker run -d --hostname my-rabbit --name mySampleRabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
+
+docker run --name mySampleDb -v /my/own/datadir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag

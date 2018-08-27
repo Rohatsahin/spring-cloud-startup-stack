@@ -2,7 +2,7 @@ server:
   port: ${PORT:8991}
   use-forward-headers: false
   servlet:
-    context-path: /customer-service
+    context-path: /customer
     
 
 spring:

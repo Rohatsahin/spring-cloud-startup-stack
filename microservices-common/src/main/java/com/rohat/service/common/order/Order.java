@@ -9,8 +9,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="customer_order")
 public class Order implements Serializable {
     
 	private static final long serialVersionUID = -5874737634779362107L;

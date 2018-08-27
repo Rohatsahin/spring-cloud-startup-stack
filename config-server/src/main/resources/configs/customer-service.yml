@@ -2,10 +2,8 @@ spring:
   cloud:
     refresh:
       enabled: false
-      
-spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/customer?useSSL=false
+    url: jdbc:mysql://localhost:3306/customerServiceDb?useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver

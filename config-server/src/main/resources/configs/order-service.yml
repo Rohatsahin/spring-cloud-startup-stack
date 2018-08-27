@@ -2,10 +2,15 @@ spring:
   cloud:
     refresh:
       enabled: false
-      
+             
 spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   datasource:
-    url: jdbc:mysql://localhost:3306/order?useSSL=false
+    url: jdbc:mysql://localhost:3306/orderServiceDb?useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -21,14 +26,7 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-      ddl-auto: validate         
-      
-spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+      ddl-auto: create     
     
 subscriber:
   queue: order-queue

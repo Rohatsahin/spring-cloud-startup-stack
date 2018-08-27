@@ -2,10 +2,8 @@ spring:
   cloud:
     refresh:
       enabled: false
-      
-spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/authentication?useSSL=false
+    url: jdbc:mysql://localhost:3306/authenticationServiceDb?useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -21,4 +19,4 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-      ddl-auto: validate      
+      ddl-auto: create      
