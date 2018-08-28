@@ -5,7 +5,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -13,6 +12,8 @@ import org.springframework.security.oauth2.provider.TokenRequest;
 import org.springframework.security.oauth2.provider.request.DefaultOAuth2RequestFactory;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.stereotype.Component;
+
+import com.rohat.service.authentication.service.CustomUserDetailsService;
 
 @Component
 public class CustomOauth2RequestFactory extends DefaultOAuth2RequestFactory {
@@ -26,7 +27,7 @@ public class CustomOauth2RequestFactory extends DefaultOAuth2RequestFactory {
 	private TokenStore tokenStore;
 	
 	@Autowired
-	private UserDetailsService userDetailsService;
+	public CustomUserDetailsService customUserDetailsService;
 
 	@Override
 	public TokenRequest createTokenRequest(Map<String, String> requestParameters, ClientDetails authenticatedClient) {
@@ -35,7 +36,7 @@ public class CustomOauth2RequestFactory extends DefaultOAuth2RequestFactory {
 					tokenStore.readRefreshToken(requestParameters.get("refresh_token")));
 			SecurityContextHolder.getContext()
 					.setAuthentication(new UsernamePasswordAuthenticationToken(authentication.getName(), null,
-							userDetailsService.loadUserByUsername(authentication.getName()).getAuthorities()));
+							customUserDetailsService.loadUserByUsername(authentication.getName()).getAuthorities()));
 		}
 		return super.createTokenRequest(requestParameters, authenticatedClient);
 	}

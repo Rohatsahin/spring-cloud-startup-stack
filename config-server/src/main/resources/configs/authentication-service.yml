@@ -19,4 +19,17 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
-      ddl-auto: create      
+      ddl-auto: validate      
+
+authenticaiton:
+  clientId: test
+  clientSecret: test
+  resourceId: test_server
+  
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+  
+  

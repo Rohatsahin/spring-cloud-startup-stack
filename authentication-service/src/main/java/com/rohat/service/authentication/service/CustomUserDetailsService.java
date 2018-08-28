@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import com.rohat.service.authentication.repository.UserRepository;
 import com.rohat.service.common.authenticaiton.User;
 
-@Service(value = "userDetailsService")
+@Service
 public class CustomUserDetailsService implements UserDetailsService {
 
 	@Autowired

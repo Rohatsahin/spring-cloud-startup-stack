@@ -1,8 +1,6 @@
 server:
   port: ${PORT:8993}
   use-forward-headers: false
-  servlet:
-    context-path: /auth
     
 
 spring:
@@ -12,4 +10,4 @@ spring:
     config:
       uri: http://localhost:7777/config
   session:
-   store-type: none
+   store-type: none   
